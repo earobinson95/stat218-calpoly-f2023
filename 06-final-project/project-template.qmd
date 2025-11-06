@@ -27,7 +27,7 @@ execute:
 
 -   DATA SET NAME: <copy paste link to data set here>
 
-```{r read-data}
+```{r}
 ## This is where you will read in your data! 
 # I suggest copying and pasting code from a prior lab. 
 # You will need to change: 
@@ -36,7 +36,7 @@ execute:
 
 ```
 
-```{r clean-data}
+```{r}
 ## Replace the DATA NAME with your data set name after reading in the data. This will make sure the names in your data set are all "clean" -- no spaces, all lowercase, etc. 
 DATA NAME <- DATA NAME |> 
   janitor::clean_names()
