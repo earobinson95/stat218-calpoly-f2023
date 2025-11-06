@@ -409,59 +409,62 @@ ggplot(data = cholesterol_data_long,
 
 1. What is the observational unit for this study?
 
-\vspace{1.2in}
+<span style="color:blue;">An adult</span>
 
 2. What are the variables assessed in this study? What are their roles (explanatory / response) and data types?
 
-\vspace{1.2in}
++ <span style="color:blue;">Explanatory: Diet (cornflake / oatbran) - categorical </span>
++ <span style="color:blue;">Response: Cholesterol (mmol/L) - numerical</span>
 
 3. What are the parameters of interest for this study?
 
-\vspace{1.2in}
++ <span style="color:blue;">$\mu_\text{Cornlfakes} - \mu_\text{oatbran}$: the difference in population mean cholesterol between the cornflake diet and the oatbran diet for all adults.</span>
 
 4. Report the observed sample mean cholesterol level for study participants on the corn flake diet. How about on the oat bran diet?
 
-\vspace{1.2in}
++ <span style="color:blue;">$\bar x_\text{cornflake}=4.44$ mmol/L</span>
++ <span style="color:blue;">$\bar x_\text{oatbran}=4.08$ mmol/L</span>
 
 5. Calculate the observed difference in the mean cholesterol level between participants on the corn flake diet and participants on the oat bran diet.
 
-\vspace{1.2in}
+<span style="color:blue;">$\bar x_\text{cornflake}-\bar x_\text{oatbran}=4.44-4.08=0.36$ mmol/L</span>
 
 6. Set up the null and alternative hypotheses, *in symbols*.
 
-\vspace{1.2in}
++ <span style="color:blue;">$H_0: \bar \mu_\text{cornflake}-\bar \mu_\text{oatbran}=0$</span>
++ <span style="color:blue;">$H_0: \bar \mu_\text{cornflake}-\bar \mu_\text{oatbran}\ne0$</span>
 
 7. Check the conditions for using the two-sample independent t-test.
 
-+ Independent observations *within* groups:
++ Independent observations *within* groups: <span style="color:blue;">The cholesterol of an adult on the cornflake diet doesn't influence the cholesterol of another adult on the cornflake diet (and same for oatbran diet).</span>
 
 \vspace{0.1in}
 
-+ Independent observations *between* groups:
++ Independent observations *between* groups: <span style="color:blue;">The cholesterol of an adult on the cornflake diet doesn't influence the cholesterol of another adult on the oatbran diet.</span>
 
 \vspace{0.1in}
 
-+ Normality assumption:
++ Normality assumption: <span style="color:blue;">$n_\text{cornflake}=14<30$ and $n_\text{oatbran}=14<30$. Thus, look at histograms of observed cholesterol. The histograms of the observed cholesterol for both diets are appoximately normal/bell shaped.</span>
 
 \vspace{0.1in}
 
 8. What do we know about the sampling distribution of the difference in means?
 
-+ Shape:
++ Shape: <span style="color:blue;">Approximately normal</span>
 
 \vspace{0.1in}
 
-+ Mean:
++ Mean: <span style="color:blue;">0 (if no difference (i.e., null is true) we expect $\mu_\text{cornflake}-\mu_\text{oatbran}=0$</span>
 
 \vspace{0.1in}
 
-+ Standard Deviation (i.e., Standard Error):
++ Standard Deviation (i.e., Standard Error): <span style="color:blue;">$\sqrt{\frac{0.97^2}{14}+\frac{1.05^2}{14}}=0.38$mmol/L</span>
 
 \vspace{0.1in}
 
 9. Calculate the observed T test-statistic for the data in the study.
 
-\vspace{1.2in}
+<span style="color:blue;">$$T=\frac{0.36-0}{0.38}=0.95$$</span>
 
 10. Using the t-distribution provided below, show how you would estimate the p-value.
 
@@ -470,6 +473,8 @@ ggplot(data = cholesterol_data_long,
 #| fig-align: center
 knitr::include_graphics("07-images/tdist-7.2.png")
 ```
+
+<span style="color:blue;">Draw a line at -0.95 and +0.95 and shade the tailends from there. p-value "looks like" about 0.3.</span>
 
 \newpage
 
@@ -487,13 +492,11 @@ t_test(x = cholesterol_data_long,
 
 11. Using the output above, write a conclusion in context of the study. Make sure to include your evidence.
 
-\vspace{1.4in}
+<span style="color:blue;">At an $\alpha = 0.05$, we do not have enough evidence to conclude the difference in population mean cholesterol levels for all adults on the cornflake diet compared to the oatbran diet is different from 0 mmol/L (T = 0.947, df = 25.8, p = 0.352)</span>
 
 12. If we had found evidence of a difference in cholesterol levels between the two diets, could we say that cereal diet *causes* a change in cholesterol levels? Explain.
 
-\vspace{1.2in}
-
-\newpage
+<span style="color:blue;">Yes, since diet was *randomly assigned* to subjects. Thus, it reduces the effect of confounding variables.</span>
 
 ::: callout-note
 ### Constructing a Confidence Interval for the Difference in Means 
@@ -510,22 +513,25 @@ $$(\bar x_1 - \bar x_2) \pm \text{t-quantile}\sqrt{\frac{s_1^2}{n_1} + \frac{s_2
 qt(0.975, df = 40)
 ```
 
-+ Lower Endpoint =  
++ Lower Endpoint =  <span style="color:blue;">0.36 - 2.02(0.38) = -0.41</span>
 
 \vspace{0.5in}
 
-+ Upper Endpoint =  
++ Upper Endpoint =  <span style="color:blue;">0.36 + 2.02(0.38) = 1.12</span>
 
 \vspace{1.2in}
 
 14. Interpret the meaning of this 95% confidence interval in context of the study.
 
-\vspace{1.2in}
+<span style="color:blue;">We are 95\% confident the difference in population mean cholesterol levels for all adults on the cornflake diet compared to the oatbran diet is between -0.41 and 1.12.</span>
+
+alternatively...
+
+<span style="color:blue;">We are 95\% confident the population mean cholesterol for all adults on the cornflake diet is between 0.41 lower and 1.12 higher than the population mean cholesterol for all adults on the oatbran diet.</span>
 
 15. What does it mean for 0 to fall within the confidence interval?
 
-\vspace{1.2in}
-
+<span style="color:blue;">0 is a plausible difference in population mean cholesterol levels. In other words, it is *plausible* the mean cholesterol levels are "the same". Recall we FTR the null.</span>
 
 ## COMPARING TWO POPULATION MEANS: DEPENDENT SAMPLES (paired t-test)
 
@@ -572,11 +578,11 @@ Fourteen (14) individuals were randomly assigned a diet that included either cor
 
 1.  How was the data collected differently from Example 7.2?
 
-\vspace{0.8in}
+<span style="color:blue;">In Example 7.2, there were 14 different subjects on each diet. Now each subject was on both diets (i.e., SAME subject BETWEEN groups). Thus, the independent observations between groups is violated.</span>
 
 2. Are the cholesterol levels of individuals independent across the 28 measurements? Explain.
 
-\vspace{0.8in}
+<span style="color:blue;">No, there were only 14 subjects and one person's cholesterol on the cornflake diet will be related to the same person's cholesterol on the oatbran diet --> dependent!</span>
 
 Since we can match or pair the cholesterol level measurements between the treatment groups, we call this a **paired study design**. These could be paired up by taking measurements on the same observational unit twice or taking measurements on similar observational units (e.g. identical twins, similar fields, etc.). When analyzing the data and making conclusions, we must take this design into consideration or we are violating a key assumption (independent observations *between* groups!).
 
@@ -589,11 +595,14 @@ The data set below shows the data for each participant `ID`. The `CORNLK` column
 head(cholesterol_data)
 ```
 
++ <span style="color:blue;">Before (2-sample independent t-test): difference in population means $(\bar x_\text{CF}-\bar x_\text{OB})$</span>
++ <span style="color:blue;">Now (paired): population mean of differences $(\bar x_\text{CF-OB})$ -- treat this like we did in Ch. 6!</span>
+
 \vspace{0.1in}
 
 3.	What can be said about the Cholesterol of Subject ID #1 as compared to Subject ID #2, for example, regardless of which diet the Cholesterol levels were measured after?
 
-\vspace{1in}
+<span style="color:blue;">Subject #1 appears to have lower cholesterol levels than subject #2, in general.</span>
 
 ::: callout
 #### Big Idea
@@ -607,17 +616,19 @@ In other words, much of the variability in the observations is due to difference
 
 4. What does the `CholesterolDiff` column represent? Why does this calculation make sense?
 
-\vspace{0.8in}
+<span style="color:blue;">The change in cholesterol levels between the two diets for each subject.</span>
 
 5. What does a positive difference of 0.77 indicate?
 
-\vspace{0.8in}
+<span style="color:blue;">The subject's cholesterol level was 0.77 mmol/L higher on the cornflake diet than the oatbran diet.</span>
 
 6. What does a negative difference of -0.45 indicate?
 
-\vspace{0.8in}
+<span style="color:blue;">The subject's cholesterol level was 0.45 mmol/L lower on the cornflake diet than the oatbran diet.</span>
 
 A histogram of the differences in cholesterol levels for the 14 individuals and a table of summary statistics are shown below. 
+
+<span style="color:blue;">Ehh, not super normal, but let's proceed anyway.</span>
 
 ```{r histogram}
 #| fig-align: center
@@ -638,11 +649,11 @@ favstats(~ CholesterolDiff, data = cholesterol_data)
 ```
 7.	What is the mean of the differences for the 14 subjects?  Interpret this value. Does this value seem familiar?
 
-\vspace{1.2in}
+<span style="color:blue;">$\bar x_\text{CF-OB}=\bar x_\text{diff}=0.36$ the observed sample mean of the difference in cholesterol levels between all adults on the cornflake and oatbran diet is 0.36mmol/L</span>
 
 8.	If cereal diet had *no effect* on cholesterol levels, what would you expect the mean of these differences to be?
 
-\vspace{0.8in}
+<span style="color:blue;">We would expect no change in cholesterol level for each subject (i.e., we expect $\bar x_\text{diff}=0$</span>
 
 ::: callout
 #### Big Idea: paired t-test
@@ -663,17 +674,18 @@ We can carry out the hypothesis test as follows to determine whether cholesterol
 
 9. Write the parameter of interest in words.
 
-\vspace{1.2in}
+<span style="color:blue;">$\mu_\text{difference}=\mu_\text{CF-OB}:$ The population mean difference in cholesterol levels for all adults on the cornflake diet compared to the oatbran diet.</span>
 
 10. Set up the null and alternative hypotheses in words and symbols.
 
-\vspace{1.2in}
++ <span style="color:blue;">$H_O: \mu_\text{difference} = 0$</span>
++ <span style="color:blue;">$H_A: \mu_\text{difference} \ne 0$</span>
 
 11. Calculate the T test-statistic:
 
 $$T = \frac{\bar x_\text{difference} - \mu_\text{difference}}{s_\text{difference}/\sqrt{n}}$$
 
-\vspace{0.5in}
+<span style="color:blue;">$$T = \frac{0.36-0}{0.406/\sqrt{14}}=3.31$$</span>
 
 12. Using the t-distribution provided below, show how you would estimate the p-value.
 
@@ -682,6 +694,8 @@ $$T = \frac{\bar x_\text{difference} - \mu_\text{difference}}{s_\text{difference
 #| fig-align: center
 knitr::include_graphics("07-images/tdist-7.3.png")
 ```
+
+<span style="color:blue;">Draw lines at -3.31 and +3.31 then shade the outskirts.</span>
 
 Similar to Chapter 6, the R code below can be used to conduct the paired t-test:
 
@@ -695,13 +709,18 @@ t_test(x = cholesterol_data,
 
 13. State a conclusion in context of the study. Make sure to include proper evidence.
 
-\vspace{1.2in}
+<span style="color:blue;">At at $\alpha = 0.05$, we have evidence to conclude the population mean difference in cholesterol levels for all adults beween the cornflake and oatbran diet is different from 0 mmol/L (T = 3.34, df = 13, p-value = 0.0053).</span>
 
 14. How does your conclusion differ from your conclusion in Example 7.2 when we assumed independent samples?
 
-\vspace{1.2in}
++ <span style="color:blue;">Recall 7.2: T = 0.947, p-value = 0.352 -> we FTR "not enough evidence" - independent two-sample t-test</span>
++ <span style="color:blue;">Now in 7.3: T = 3.35, p-value = 0.005 -> we R "have evidence - paired t-test</span>
+
+<span style="color:blue;">We found different conclusions, thus it is important to analyze data in the way it was collected. y treating the variability (i.e., SE) differently, we were able to focus on the actual research question rather than the variability due to different subjects.</span>
 
 15. Can we conclude that the diet *caused* the change? Explain.
+
+<span style="color:blue;">Yes, they *randomly assigned the order of diet* to subjects.</span>
 
 ::: callout-note
 #### Checking the Normality Assumption (CLT) for a Paired t-test
@@ -714,7 +733,7 @@ Recall that for the t-test to be valid, at least one of the following conditions
 
 16. Does the t-test appear to be a valid approach for testing this research question?  Justify your reasoning.
 
-\vspace{1.2in}
+<span style="color:blue;">Since n = 14 < 30, the histogram of the observed differences is questionably normal... I plan to proceed anyway. If I was doing this study, I would aim for more subjects.</span>
 
 17. Using the formula for confidence intervals for single numerical variables from Chapter 6 and the t-quantile provided below, calculate the 90\% confidence interval.
 
@@ -725,9 +744,8 @@ qt(0.95, 13)
 
 $$\bar x_\text{difference} \pm \text{t-quantile}\big(\frac{s_\text{difference}}{\sqrt{n}}\big)=$$
 
-\vspace{1.2in}
+<span style="color:blue;">$0.36 \pm 1.77(0.406/\sqrt{14})=(0.12, 0.59)$</span>
 
 18. Where does 0 fall within the confidence interval? Why does this make sense?
 
-\vspace{1.2in}
-
+<span style="color:blue;">The null value of 0 falls outside the confidence interval. Thus, 0 is not a *plausible* value for the population mean difference which makes sense since we rejected the null and found evidence to conclude the population mean difference in cholesterol between cornflake and oatbran was different from 0.</span>
