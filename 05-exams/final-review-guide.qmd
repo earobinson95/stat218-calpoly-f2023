@@ -38,12 +38,14 @@ library(emmeans)
 library(broom)
 ```
 
-**COMMON FINAL: SATURDAY, DECEMBER 3RD AT 10:10AM - 1PM (FROST CENTER 181-0102)**
+**COMMON FINAL: MONDAY, DECEMBER 8TH AT 7:10PM - 10:00PM (Building 26 Room 104)**
 
 **Finals Office Hours**
 
-+ Friday 12/3 at 1:00 - 2:30pm
-+ Saturday 12/4 at 8:30 - 9:30am
++ Monday 12/8 at 1:00 - 2:30pm
++ Wednesday 12/10 at 1:00 - 2:30pm
+
+*Remember your project reports are due Wed. Dec 10 at 11:59pm*
 
 # What to Expect
 
@@ -55,9 +57,14 @@ library(broom)
 
 I have not finalized point assignment for the final yet, but I would expect approximately:
 
-+ 40% new material (I would fully expect an ANOVA scenario and Regression scenario on there, who knows, it may even be one from this review!).
-+ 30% cumulative material.
-+ 20% determine the appropriate statistical analysis.
++ 40% new material -- I would fully expect:
+  + an ANOVA scenario
+  + Regression scenario on there
++ 30% cumulative material -- I would fully expect:
+  + some two-sample independent t-tests vs paired t-tests
++ 20% determine the appropriate statistical analysis (see practice at the bottom!)
+
+*Who knows, maybe some practice problems will show up on the exam.*
 
 ::: callout-tip
 ## Canvas Discussion Board
@@ -185,6 +192,8 @@ Note: this does not guarantee every topic on the exam is on the list.
 \newpage
 
 # Practice Problems
+
++ You can go back to optional assignments (Lab 8 and HW Ch. 9) for review as well.
 
 ## General Questions
 
@@ -819,7 +828,7 @@ iii.	Write the hypotheses in symbols.
 
 16.	The 2009 Sleep in America poll took a random sample of 100 adults to see if people tend to sleep more on weekends. They asked them to report the typical amount of sleep (in hours) they get on weekdays and on weekends. 
 
-17.	The Women’s Health Initiative randomized post-menopausal women to one of two treatments: estrogen plus progestin hormone therapy or a placebo control. They were interested in whether or not the women developed cancer over the next five years.
+17.	The Women’s Health Initiative randomized post-menopausal women to one of two treatments: estrogen plus progesterone hormone therapy or a placebo control. They were interested in whether or not the women developed cancer over the next five years.
 
 18.	Thirty pilots performed tasks at a simulated altitude of 25,000 feet. The pilots performed the tasks both completely sober and after drinking alcohol (the order was randomized, and there were 3 days between the tests). The response variable was time (in minutes) of useful performance of the tasks. The longer a pilot spends on useful performance, the better.
 
